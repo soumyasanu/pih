@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
+/* Reset and basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Container styling */
+.container {
+  max-width: 90%;
+  padding: 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Title and Notes */
+h1 {
+  font-size: 2.5em;
+  color: #b0413e;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+.love-note, .footer-note {
+  font-size: 1.2em;
+  color: #b0413e;
+  margin: 15px 0;
+  animation: fadeInText 2s ease;
+}
+
+/* Slideshow styles */
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  margin: 20px auto;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.slide {
+  display: none;
+}
+.slide img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s ease;
+}
+.slide img:hover {
+  transform: scale(1.05);
+}
+.caption {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 1em;
+  animation: fadeInCaption 2s ease;
+}
+
+/* Dots */
+.dots-container {
+  text-align: center;
+  margin-top: 15px;
+}
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.dot.active, .dot:hover {
+  background-color: #b0413e;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeInText {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInCaption {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+  animation: fadeEffect 1.5s ease;
+}
+@keyframes fadeEffect {
+  from { opacity: 0.4 } 
+  to { opacity: 1 }
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 600px) {
+  h1 {
+      font-size: 1.8em;
+  }
+  .love-note, .footer-note {
+      font-size: 1em;
+  }
+  .caption {
+      font-size: 0.9em;
+      padding: 8px 12px;
+  }
+}
